@@ -93,8 +93,8 @@ binance_query <- function(endpoint, method = 'GET',
 
     # if Binance weight is approaching the limmit of 1200, wait for the next full minute
     if (exists('binance.weight')) {
-        if (binance.weight > 1159) {
-            Sys.sleep(61 - as.integer(format(Sys.time(), "%S")))
+        if (binance.weight > 1159L) {
+            Sys.sleep(61L - as.integer(format(Sys.time(), "%S")))
         }
     }
 
